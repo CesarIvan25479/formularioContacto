@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto Mono', monospace;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    background-color: white;
+    min-width: 280px;
+    width: 360px;
+    height: auto;
+    border-radius: 5px;
+    border-top: 4px solid #007bff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-header{
+    width: 100%;
+    height: 73px;
+    padding: 18px;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+.main-title{
+    width: 100%;
+    text-align: center;
+    padding: 18px;
+    font-size: 1.6rem;
+    color: rgb(33, 37, 41);
+}
+form{
+    margin-top: -18px;
+    width: 100%;
+    height: auto;
+    padding: 18px;
+}
+form .main-form{
+    width: 100%;
+    height: 38px;
+    display: flex;
+    margin-bottom: 20px;
+}
+.main-form input{
+    width: 87%;
+    border-radius: 5px 0 0 5px;
+    background-color: white;
+    border: 1px solid #ced4da;
+    outline: none;
+    padding-left: 10px;
+    padding-left: 10px;
+}
+.main-form input:focus{
+    box-shadow: 0px 0px 3px 0px #1586ff;
+}
+.main-form span{
+    display: inline-block;
+    width: 12%;
+    height: 100%;
+    background-color: #e9ecef;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #ced4da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-form span img{
+    width: 15px;
+    height: 15px;
+    filter: opacity(0.4) drop-shadow(0 0 0 #495057); 
+}
+.main-form-text{
+    width: 100%;
+    height: 109px;
+    margin-bottom: 20px;
+}
+.main-form-text .textarea{
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 109px;
+    min-height: 109px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    outline: none;
+}
+.main-form-text .textarea:focus{
+    box-shadow: 0px 0px 3px 0px #1586ff;
+}
+.main-form-subm{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.main-form-subm p{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.main-form-subm input{
+    width: 96px;
+    height: 38px;
+    border-radius: 5px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
