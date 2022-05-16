@@ -1,3 +1,27 @@
+<?php
+require "./logica/mail.php";
+function validar($nombre,$correo,$asunto,$mensaje,$form){
+    return !empty($nombre) && !empty($correo) && !empty($asunto) && !empty($mensaje);
+}
+$estatus = "";
+if(isset($_POST['form'])){
+    if(validar($_POST['nombre'],$_POST['correo'], $_POST['asunto'], $_POST['mensaje'],"")){
+        $nombre = $_POST['nombre'];
+        $correo = $_POST['correo'];
+        $asunto = $_POST['asunto'];
+        $mensaje = $_POST['mensaje'];
+        
+        $body = "$nombre <$correo> te envia el siguiente mensaje:<br><br> $mensaje";
+        //mandar Correo
+        sendMail($asunto,$body,$correo,$nombre,true);
+        $estatus = "success";
+    }else{
+        $estatus = "danger";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +46,7 @@
         </div>
         
         
-       <form action="" method="post">
+       <form action="./" method="post">
            <div class="main-form">
                 <input type="nombre" name="nombre" id="nombre" placeholder="Nombre Completo">
                 <span><img src="./img/user-solid.svg" alt=""></span>
@@ -39,11 +63,21 @@
            </div>
             
            <div class="main-form-text">
-                <textarea name="" class="textarea" rows="7" placeholder="Escribe aqui tu mensaje"></textarea>
+                <textarea name="mensaje" class="textarea" rows="7" placeholder="Escribe aqui tu mensaje"></textarea>
            </div>
            <div class="main-form-subm">
-                <p>Llena todos los campos</p>
-                <input type="submit" value="Enviar">
+                <div>
+                <?php if($estatus == "success"):?>
+                    <p class="success">Llena todos los campos</p>
+                <?php endif; ?>
+                <?php if($estatus == "danger"):?>
+                    <p class="danger">Llena todos los campos</p>
+                <?php endif; ?>
+                </div>
+               
+                
+                <input type="submit" value="Enviar" name="form">
+                
            </div>
        </form> 
     </main>
